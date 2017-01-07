@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>GO Nueva Cordoba</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- loDash -->
+    <script src="lib/lodash-core-min.js"></script>
+
+    <!-- analytics -->
+    <script type="text/javascript" src="lib/ga-localstorage/GALocalStorage.js"></script>
+    <script>
+        ga_storage._setAccount('UA-85712186-1');
+        ga_storage._trackPageview('/app');
+    </script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+
+  <body ng-app="myApp" ng-controller="appController" ng-class="!loadComplete || clientsShown == null || noResults ? 'notShowingProducts' : ''">
+
+    <!-- LOADING SCREEN -->
+    <div id="loadingScreen" ng-if="!loadComplete" class="textAndLogo">
+        <h2>CARGANDO...</h2>
+        <img src="img/logo.png" class="logo">
+    </div>
+    <!-- end LOADING SCREEN -->
+
+    <!-- POST-LOAD LAYOUT -->
+    <div ng-if="loadComplete" ng-cloak>
+        <!-- GENERAL SEARCH BOX -->
+        <form id="searchBox" autocomplete="off">
+            <input type="text" class="field" id="searchterm" ng-model="searchText" placeholder="Buscar en Nueva Córdoba" ng-focus="isSearchBoxFocused = true" ng-blur="isSearchBoxFocused = false" />
+
+            <button type="submit" id="search" ng-click="search(searchText)">
+                <img src="img/go.png">
+            </button>
+        </form>
+        <!-- end GENERAL SEARCH BOX -->
+
+        <!-- SCREENS-->
+        <div>
+            <!-- HOME SCREEN -->
+            <div ng-if="clientsShown == null" id="homeScreen" ng-class="isSearchBoxFocused ? 'isSearchBoxFocused' : ''" class="textAndLogo">
+                <img src="img/queSeTeAntoja.png" class="promotionalText">
+                <img src="img/logo.png" class="logo" ng-click="logoPressed()">
+            </div>
+            <!-- end HOME SCREEN -->
+
+            <!-- NO RESULTS SCREEN -->
+            <div ng-if="noResults" id="noResultsScreen" ng-class="isSearchBoxFocused ? 'isSearchBoxFocused' : ''" class="textAndLogo">
+                <h2 class="noResultsHeader">No se encontraron productos que coincidan con la búsqueda, probá de nuevo con otras palabras :)</h2>
+                <img src="img/logo.png" class="logo" ng-click="logoPressed()">
+            </div>
+            <!-- end NO RESULTS SCREEN -->
+
+            <!-- RESULTS SCREEN -->
+            <div id="resultsScreen">
+                <!-- OPEN NOW -->
+                <div class="clientCard" ng-repeat="clientShown in clientsShown.open">
+                    <div class="clientInfo">
+                        <p class="clientName">{{clientShown.client.cliente}}</p>
+                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
+                        <div class="contacto">
+                            <p class="direccion">{{clientShown.client.direccion}}</p>
+                            <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
+                        </div>
+                    </div>
+
+                    <div class="matchedProducts">
+                        <div ng-repeat="product in clientShown.matchedProducts" class="product">
+                            <h5 class="price">${{product.precio || ' - '}}</h5>
+                            <h5 class="productName">{{product.producto}}</h5>
+                            <h5 class="descripcion">{{product.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OPEN LATER -->
+                <div class="clientCard" ng-repeat="clientShown in clientsShown.openLater">
+                    <div class="clientInfo">
+                        <p class="clientName">{{clientShown.client.cliente}}</p>
+                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
+                        <div class="contacto">
+                            <p class="direccion">{{clientShown.client.direccion}}</p>
+                            <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
+                        </div>
+                    </div>
+
+                    <div ng-if="!clientShown.openData.isOpen" class="openClosedSign">
+                        <h3 ng-class="clientShown.openData.openTime == undefined ? 'noOpenTime' : ''">Cerrado</h3>
+                        <p ng-if="clientShown.openData.openTime != undefined">
+                            Abrimos a las {{clientShown.openData.openTime}}
+                        </p>
+                    </div>
+
+                    <div class="matchedProducts">
+                        <div ng-repeat="product in clientShown.matchedProducts" class="product">
+                            <h5 class="price">${{product.precio || ' - '}}</h5>
+                            <h5 class="productName">{{product.producto}}</h5>
+                            <h5 class="descripcion">{{product.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLOSED -->
+                <div class="clientCard" ng-repeat="clientShown in clientsShown.closed">
+                    <div class="clientInfo">
+                        <p class="clientName">{{clientShown.client.cliente}}</p>
+                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
+                        <div class="contacto">
+                            <p class="direccion">{{clientShown.client.direccion}}</p>
+                            <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
+                        </div>
+                    </div>
+
+                    <div ng-if="!clientShown.openData.isOpen" class="openClosedSign">
+                        <h3 ng-class="clientShown.openData.openTime == undefined ? 'noOpenTime' : ''">Cerrado</h3>
+                        <p ng-if="clientShown.openData.openTime != undefined">
+                            Abrimos a las {{clientShown.openData.openTime}}
+                        </p>
+                    </div>
+
+                    <div class="matchedProducts">
+                        <div ng-repeat="product in clientShown.matchedProducts" class="product">
+                            <h5 class="price">{{product.precio || ' - '}}</h5>
+                            <h5 class="productName">{{product.producto}}</h5>
+                            <h5 class="descripcion">{{product.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end RESULTS SCREEN -->
+        </div>
+        <!-- end SCREENS -->
+    </div>
+    <!-- end POST-LOAD LAYOUT -->
+
+    <!-- jQuery -->
+    <script src="lib/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    -->
+
+    <script src="js/headerScrolling.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
