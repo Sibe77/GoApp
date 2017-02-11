@@ -79,6 +79,7 @@ body.notShowingProducts {
     position: fixed;
     top: 0;
     width: 100vw;
+    height: 45px;
     /* Safari */
     transition: top 0.3s;
   }
@@ -97,7 +98,7 @@ body.notShowingProducts {
 }
 #searchBox #searchterm {
   width: 0;
-  height: 47px;
+  height: 45px;
 }
 #searchBox > input[type=text],
 #searchBox > button {
@@ -107,7 +108,7 @@ body.notShowingProducts {
 #searchBox > input[type=text] {
   -ms-flex: 1;
   flex: 1;
-  padding: 0.6em;
+  padding: 3px 15px 0;
   border: 0.2em solid #f69323;
 }
 #searchBox > button {
@@ -117,6 +118,8 @@ body.notShowingProducts {
 }
 #searchBox > button img {
   width: 25px;
+  position: relative;
+  top: 5px;
 }
 .logo {
   width: 40vw;
@@ -188,7 +191,7 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard {
-    margin: 0 10px 20px;
+    margin: 0 10px 10px;
     padding: 5px;
     overflow: hidden;
   }
@@ -333,6 +336,7 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard .openClosedSign h3 {
+    color: whitesmoke;
     margin: 0;
   }
 }

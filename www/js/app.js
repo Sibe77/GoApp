@@ -219,7 +219,8 @@ myApp.controller('appController', ['$scope', function($scope) {
   }
 
   $scope.logoPressed = function () {
-    document.getElementById('searchterm').focus();
+    var searchBox = document.getElementById('searchterm');
+    console.log("Logo pressed but serach box not focusing. Line 223 File app.js");
   }
 
   // ------------------ End $scope --------------------- //

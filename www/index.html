@@ -149,7 +149,7 @@
 
                     <div class="matchedProducts">
                         <div ng-repeat="product in clientShown.matchedProducts" class="product">
-                            <h5 class="price">{{product.precio || ' - '}}</h5>
+                            <h5 class="price">${{product.precio || ' - '}}</h5>
                             <h5 class="productName">{{product.producto}}</h5>
                             <h5 class="descripcion">{{product.descripcion}}</h5>
                         </div>
