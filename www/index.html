@@ -117,6 +117,8 @@
                         <h3 ng-class="clientShown.openData.openTime == undefined ? 'noOpenTime' : ''">Cerrado</h3>
                         <p ng-if="clientShown.openData.openTime != undefined">
                             Abrimos a las {{clientShown.openData.openTime}}
+                            <span ng-if="clientShown.openData.openHour < 12">(AM)</span>
+                            <span ng-if="clientShown.openData.openHour >= 12 && clientShown.openData.openHour < 13">(PM)</span>
                         </p>
                     </div>
 
