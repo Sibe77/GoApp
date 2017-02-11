@@ -10,6 +10,7 @@
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <content src="index.html" />
     <access origin="*" />
+    <access origin="geo:*" launch-external="yes" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
     <preference name="webviewbounce" value="false" />

@@ -437,7 +437,7 @@ myApp.controller('appController', ['$scope', function($scope) {
         }
 
         nextOpenTime = getNextOpenTime(cliente.hours[horario].abre, cliente.hours[horario].vuelveabrir, currentHour);
-        nextOpenHour = nextOpenTime.split(":")[0];
+        nextOpenHour = nextOpenTime ? nextOpenTime.split(":")[0] : 0;
       }
     }
 
