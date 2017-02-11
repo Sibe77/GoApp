@@ -278,14 +278,16 @@ body.notShowingProducts {
     margin: 0;
   }
 }
-#resultsScreen .clientCard .clientInfo .contacto p {
+#resultsScreen .clientCard .clientInfo .contacto .direccion .link {
   font-size: 11pt;
   font-weight: lighter;
   font-family: baloo tamma;
   text-align: center;
+  text-decoration: none;
+  color: #2b1a06;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
-  #resultsScreen .clientCard .clientInfo .contacto p {
+  #resultsScreen .clientCard .clientInfo .contacto .direccion {
     color: #002448;
     margin: 0;
   }
