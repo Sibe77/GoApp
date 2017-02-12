@@ -193,7 +193,7 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard {
-    margin: 0 10px 10px;
+    margin: 0 10px 15px;
     padding: 5px;
     overflow: hidden;
   }
@@ -342,7 +342,7 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard .matchedProducts {
-    padding: 10px 5px;
+    padding: 10px 15px;
   }
 }
 #resultsScreen .clientCard .matchedProducts .product {

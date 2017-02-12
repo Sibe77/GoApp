@@ -78,7 +78,7 @@
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
                         <div class="contacto">
-                            <p class="direccion">
+                            <p class="direccion" ng-if="clientShown.client.direccion">
                                 <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
                             </p>
                             <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
@@ -99,7 +99,7 @@
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
                         <div class="contacto">
-                            <p class="direccion">
+                            <p class="direccion" ng-if="clientShown.client.direccion">
                                 <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
                             </p>
                             <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
@@ -129,7 +129,7 @@
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
                         <div class="contacto">
-                            <p class="direccion">
+                            <p class="direccion" ng-if="clientShown.client.direccion">
                                 <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
                             </p>
                             <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
