@@ -96,8 +96,7 @@
                 <!-- OPEN LATER -->
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.openLater">
                     <div class="clientInfo">
-                        <p class="clientName">{{clientShown.client.cliente}}</p>
-                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
+                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
                         <div class="contacto">
                             <p class="direccion" ng-if="clientShown.client.direccion">
                                 <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
@@ -127,8 +126,7 @@
                 <!-- CLOSED -->
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.closed">
                     <div class="clientInfo">
-                        <p class="clientName">{{clientShown.client.cliente}}</p>
-                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
+                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
                         <div class="contacto">
                             <p class="direccion" ng-if="clientShown.client.direccion">
                                 <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>

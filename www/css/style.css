@@ -34,7 +34,7 @@ body {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   body {
-    padding-top: 60px;
+    padding-top: 55px;
     background-color: rgb(68, 68, 68);
   }
 }
@@ -86,7 +86,7 @@ body.notShowingProducts {
 
   #searchBox.homeScreen {
     box-shadow: 0px 0px 15px 0px rgb(255, 146, 22);
-    top: 45vh;
+    top: 38vh;
     width: 90vw;
     border: 45px;
     left: 5vw;
@@ -131,7 +131,8 @@ body.notShowingProducts {
   top: 5px;
 }
 .logo {
-  width: 45vw;
+  left: 20vw;
+  width: 40vw;
 }
 #homeScreen .logo {
   position: absolute;
@@ -159,7 +160,7 @@ body.notShowingProducts {
 #homeScreen .promotionalText {
   width: 70vw;
   left: 15vw;
-  top: 30px;
+  top: 19vh;
   position: absolute;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
@@ -208,8 +209,8 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard {
-    margin: 0 10px 15px;
-    padding: 5px;
+    margin: 0 5px 15px;
+    padding: 1px;
     overflow: hidden;
   }
 }
@@ -242,7 +243,7 @@ body.notShowingProducts {
     background-repeat: no-repeat;
     background-size: 150px;
     background-position: center;
-    background-color: rgba(246, 147, 35, 0.8);
+    background-color: rgba(0, 0, 0, 0.63);
     font-size: 19pt;
     font-weight: lighter;
     font-family: baloo tamma;
@@ -400,8 +401,8 @@ body.notShowingProducts {
   float: right;
   font-family: 'Baloo Tamma';
   font-weight: lighter;
-  color: #f69323;
-  font-size: 16px;
+  color: hsla(32, 100%, 44%, 1);
+  font-size: 18px;
   position: relative;
   top: 3px;
 }
