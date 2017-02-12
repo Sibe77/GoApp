@@ -38,7 +38,6 @@
 
     <!-- LOADING SCREEN -->
     <div id="loadingScreen" ng-if="!loadComplete" class="textAndLogo">
-        <h2>CARGANDO...</h2>
         <img src="img/logo.png" class="logo">
     </div>
     <!-- end LOADING SCREEN -->
@@ -46,7 +45,7 @@
     <!-- POST-LOAD LAYOUT -->
     <div ng-if="loadComplete" ng-cloak>
         <!-- GENERAL SEARCH BOX -->
-        <form id="searchBox" autocomplete="off">
+        <form id="searchBox" autocomplete="off" ng-class="clientsShown == null ? 'homeScreen' : ''">
             <input type="text" class="field" id="searchterm" ng-model="searchText" placeholder="Buscar en Nueva Córdoba" ng-focus="isSearchBoxFocused = true" ng-blur="isSearchBoxFocused = false" />
 
             <button type="submit" id="search" ng-click="search(searchText)">
@@ -58,7 +57,7 @@
         <!-- SCREENS-->
         <div>
             <!-- HOME SCREEN -->
-            <div ng-if="clientsShown == null" id="homeScreen" ng-class="isSearchBoxFocused ? 'isSearchBoxFocused' : ''" class="textAndLogo">
+            <div ng-if="clientsShown == null" id="homeScreen" ng-hide="isSearchBoxFocused">
                 <img src="img/queSeTeAntoja.png" class="promotionalText">
                 <img src="img/logo.png" class="logo" ng-click="logoPressed()">
             </div>
@@ -76,7 +75,7 @@
                 <!-- OPEN NOW -->
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.open">
                     <div class="clientInfo">
-                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
+                        <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
                         <div class="contacto">
                             <p class="direccion" ng-if="clientShown.client.direccion">
                                 <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
@@ -97,6 +96,7 @@
                 <!-- OPEN LATER -->
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.openLater">
                     <div class="clientInfo">
+                        <p class="clientName">{{clientShown.client.cliente}}</p>
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
                         <div class="contacto">
                             <p class="direccion" ng-if="clientShown.client.direccion">
@@ -127,6 +127,7 @@
                 <!-- CLOSED -->
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.closed">
                     <div class="clientInfo">
+                        <p class="clientName">{{clientShown.client.cliente}}</p>
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}">
                         <div class="contacto">
                             <p class="direccion" ng-if="clientShown.client.direccion">

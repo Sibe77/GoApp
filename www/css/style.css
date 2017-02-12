@@ -35,7 +35,7 @@ body {
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   body {
     padding-top: 60px;
-    background-color: #E6E6E6;
+    background-color: rgb(68, 68, 68);
   }
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
@@ -81,7 +81,15 @@ body.notShowingProducts {
     width: 100vw;
     height: 45px;
     /* Safari */
-    transition: top 0.3s;
+    transition: top 0.3s, width 0,2s;
+  }
+
+  #searchBox.homeScreen {
+    box-shadow: 0px 0px 15px 0px rgb(255, 146, 22);
+    top: 45vh;
+    width: 90vw;
+    border: 45px;
+    left: 5vw;
   }
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
@@ -123,7 +131,13 @@ body.notShowingProducts {
   top: 5px;
 }
 .logo {
-  width: 40vw;
+  width: 45vw;
+}
+#homeScreen .logo {
+  position: absolute;
+  bottom: 30px;
+  width: 33vw;
+  left: 33vw;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
   .logo {
@@ -143,9 +157,10 @@ body.notShowingProducts {
   /* FOCUS ON SEARCH BOX */
 }
 #homeScreen .promotionalText {
-  width: 90vw;
-  left: 5vw;
-  bottom: 60vh;
+  width: 70vw;
+  left: 15vw;
+  top: 30px;
+  position: absolute;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
   #homeScreen .promotionalText {
@@ -221,13 +236,19 @@ body.notShowingProducts {
   }
 }
 #resultsScreen .clientCard .clientInfo .clientImage {
-  width: 100%;
-  height: 100%;
-  background-image: url("../images/logo.png");
-  background-repeat: no-repeat;
-  background-size: 150px;
-  background-position: center;
-  background-color: #444;
+    width: 100%;
+    height: 260px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: center;
+    background-color: rgba(246, 147, 35, 0.8);
+    font-size: 19pt;
+    font-weight: lighter;
+    font-family: baloo tamma;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.63);
+    line-height: 260px;
 }
 #resultsScreen .clientCard .clientInfo .contacto {
   padding-right: 10px;
