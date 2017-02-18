@@ -76,6 +76,9 @@
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.open">
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
+                        <a ng-if="clientShown.client.direccion" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})"">
+                            <img src="img/location.png" />
+                        </a>
                         <div class="contacto">
                             <a ng-if="clientShown.client.direccion" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})"">
                                 <img src="img/location.png" />
@@ -93,6 +96,11 @@
                             <h5 class="descripcion">{{product.descripcion}}</h5>
                         </div>
                     </div>
+
+                    <div class="delivery">
+                        <p class="text" ng-if="clientShown.client.preciodelivery">Delivery ${{clientShown.client.preciodelivery}}</p>
+                        <p class="text" ng-if="!clientShown.client.preciodelivery">Este local no ofrece Delivery</p>
+                    </div>
                 </div>
 
                 <!-- OPEN LATER -->
@@ -100,9 +108,9 @@
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
                         <div class="contacto">
-                            <p class="direccion" ng-if="clientShown.client.direccion">
-                                <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
-                            </p>
+                            <a ng-if="clientShown.client.direccion" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})"">
+                                <img src="img/location.png" />
+                            </a>
                             <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
                         </div>
                     </div>
@@ -130,9 +138,9 @@
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
                         <div class="contacto">
-                            <p class="direccion" ng-if="clientShown.client.direccion">
-                                <a class="link" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})">{{clientShown.client.direccion}}</a>
-                            </p>
+                            <a ng-if="clientShown.client.direccion" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})"">
+                                <img src="img/location.png" />
+                            </a>
                             <a ng-href="tel:{{clientShown.client.telefono}}"><img src="img/callIcon.png" /></a>
                         </div>
                     </div>

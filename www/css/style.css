@@ -209,8 +209,8 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard {
-    margin: 0 5px 15px;
-    padding: 1px;
+    margin: 0 5px 20px;
+    padding: 0 0 10px;
     overflow: hidden;
   }
 }
@@ -364,12 +364,14 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard .matchedProducts {
-    padding: 10px 15px;
+    padding: 10px 5px;
   }
 }
 #resultsScreen .clientCard .matchedProducts .product {
   margin: 10px 0;
   overflow: hidden;
+  padding: 0 5px 10px;
+  border-bottom: 1px solid gray;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
   #resultsScreen .clientCard .matchedProducts .product {
@@ -404,8 +406,17 @@ body.notShowingProducts {
   color: hsla(32, 100%, 44%, 1);
   font-size: 18px;
   position: relative;
-  top: 3px;
 }
+
+.delivery {
+  text-align: center;
+}
+.delivery .text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5e5e5e;
+}
+
 .textAndLogo {
   display: -ms-flexbox;
   display: flex;
@@ -423,7 +434,7 @@ body.notShowingProducts {
   }
 }
 a[href^="tel:"] img {
-  background-color: #008802;
+  background-color: #005201;
   width: 50px;
   border: 2px solid white;
   border-radius: 35px;
@@ -434,7 +445,7 @@ a[href^="tel:"] img {
 }
 
 a[href^="geo:"] img {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(128, 128, 128, 0.5);
   width: 50px;
   border: 2px solid white;
   border-radius: 35px;
