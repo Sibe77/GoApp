@@ -131,6 +131,11 @@
                             <h5 class="descripcion">{{product.descripcion}}</h5>
                         </div>
                     </div>
+
+                    <div class="delivery">
+                        <p class="text" ng-if="clientShown.client.preciodelivery">Delivery ${{clientShown.client.preciodelivery}}</p>
+                        <p class="text" ng-if="!clientShown.client.preciodelivery">Este local no ofrece Delivery</p>
+                    </div>
                 </div>
 
                 <!-- CLOSED -->
@@ -158,6 +163,11 @@
                             <h5 class="productName">{{product.producto}}</h5>
                             <h5 class="descripcion">{{product.descripcion}}</h5>
                         </div>
+                    </div>
+
+                    <div class="delivery">
+                        <p class="text" ng-if="clientShown.client.preciodelivery">Delivery ${{clientShown.client.preciodelivery}}</p>
+                        <p class="text" ng-if="!clientShown.client.preciodelivery">Este local no ofrece Delivery</p>
                     </div>
                 </div>
             </div>

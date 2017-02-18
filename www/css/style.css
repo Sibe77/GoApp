@@ -445,7 +445,7 @@ a[href^="tel:"] img {
 }
 
 a[href^="geo:"] img {
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(128, 128, 128, 0.3);
   width: 50px;
   border: 2px solid white;
   border-radius: 35px;
