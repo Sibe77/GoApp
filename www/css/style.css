@@ -204,13 +204,11 @@ body.notShowingProducts {
 /* RESULTS SCREEN */
 #resultsScreen .clientCard {
   background-color: white;
-  border: 1px solid #d8d8d8;
   position: relative;
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard {
     margin: 0 5px 20px;
-    padding: 0 0 10px;
     overflow: hidden;
   }
 }
@@ -237,7 +235,7 @@ body.notShowingProducts {
   }
 }
 #resultsScreen .clientCard .clientInfo .clientImage {
-    width: 100%;
+    width: 100.2%;
     height: 260px;
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
@@ -256,8 +254,7 @@ body.notShowingProducts {
   padding-left: 10px;
   width: 100%;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 240px;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
   #resultsScreen .clientCard .clientInfo .contacto {
@@ -364,14 +361,13 @@ body.notShowingProducts {
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard .matchedProducts {
-    padding: 10px 5px;
+    padding: 10px;
   }
 }
 #resultsScreen .clientCard .matchedProducts .product {
-  margin: 10px 0;
   overflow: hidden;
-  padding: 0 5px 10px;
-  border-bottom: 1px solid gray;
+  padding: 10px 5px;
+  border-bottom: 1px solid #BDBDBD;
 }
 @media only screen and (min-width: 601px) and (min-height: 501px) {
   #resultsScreen .clientCard .matchedProducts .product {
@@ -388,7 +384,7 @@ body.notShowingProducts {
   margin: 0;
 }
 #resultsScreen .clientCard .matchedProducts .product h5.productName {
-  color: #2b1a06;
+  color: #212121;
   font-weight: bold;
   overflow: hidden;
   font-size: 16px;
@@ -396,8 +392,8 @@ body.notShowingProducts {
   margin-bottom: 2px;
 }
 #resultsScreen .clientCard .matchedProducts .product h5.descripcion {
-  font-size: 10pt;
-  color: #2b1a06;
+  font-size: 11pt;
+  color: #757575;
 }
 #resultsScreen .clientCard .matchedProducts .product h5.price {
   float: right;
@@ -412,9 +408,9 @@ body.notShowingProducts {
   text-align: center;
 }
 .delivery .text {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  color: #5e5e5e;
+  color: #757575;
 }
 
 .textAndLogo {
@@ -434,9 +430,10 @@ body.notShowingProducts {
   }
 }
 a[href^="tel:"] img {
-  background-color: #005201;
+  background-color: #008502;
   width: 50px;
   border: 2px solid white;
+  box-shadow: 0px 1px 1px 0px black;
   border-radius: 35px;
   position: absolute;
   bottom: 10px;
@@ -445,9 +442,10 @@ a[href^="tel:"] img {
 }
 
 a[href^="geo:"] img {
-  background-color: rgba(128, 128, 128, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 50px;
   border: 2px solid white;
+  box-shadow: 0px 1px 1px 0px black;
   border-radius: 35px;
   position: absolute;
   bottom: 10px;

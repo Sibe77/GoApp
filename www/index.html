@@ -76,9 +76,6 @@
                 <div class="clientCard" ng-repeat="clientShown in clientsShown.open">
                     <div class="clientInfo">
                         <img class="clientImage" ng-src="{{clientShown.client.imagen}}" alt="{{clientShown.client.cliente}}" />
-                        <a ng-if="clientShown.client.direccion" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})"">
-                            <img src="img/location.png" />
-                        </a>
                         <div class="contacto">
                             <a ng-if="clientShown.client.direccion" ng-href="geo:0,0?q={{clientShown.client.direccion}}, Cordoba, Argentina({{clientShown.client.cliente}})"">
                                 <img src="img/location.png" />
