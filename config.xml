@@ -1,5 +1,5 @@
-<?xml version='1.5' encoding='utf-8'?>
-<widget id="com.relap.gonuevacordoba" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<?xml version='1.6' encoding='utf-8'?>
+<widget id="com.relap.gonuevacordoba" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>GO Nueva Cordoba</name>
     <description>
         Encontrá y compará toda la propuesta grastronómica de tu barrio.

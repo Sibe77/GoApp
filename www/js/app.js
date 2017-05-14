@@ -148,11 +148,16 @@ myApp.controller('appController', ['$scope', function($scope) {
             }
           }
         );
+
+        // Aleatory sorting for open stores
+        allMatchesSplitted.open = _.shuffle(allMatchesSplitted.open);
+
         allMatchesSplitted.openLater = _.sortBy(allMatchesSplitted.openLater, [
           function (local) {
             return local.openData.openTime;
           }
         ]);
+
         return allMatchesSplitted;
       }
 

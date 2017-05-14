@@ -312,7 +312,7 @@ body.notShowingProducts {
   }
 }
 #resultsScreen .clientCard .openClosedSign {
-  background: red;
+  background: rgba(255, 0, 0, 0.6);
   color: white;
   font-weight: bold;
   font-family: "baloo tamma";
@@ -322,11 +322,8 @@ body.notShowingProducts {
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
   #resultsScreen .clientCard .openClosedSign {
     position: absolute;
-    width: 102%;
-    top: 46px;
-    left: -30%;
-    transform: rotate(-45deg);
-    box-shadow: 0px 0px 15px 0px black;
+    top: 0;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 600px), screen and (max-height: 500px) {
